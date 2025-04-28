@@ -1,0 +1,32 @@
+{
+    "name": "Quest Save Transfer (Firefox)",
+    "version": "1.0",
+    "description": "Import v5 saves directly to Viva WebPlayer",
+    "permissions": [
+      "storage",
+      "tabs"
+    ],
+    "host_permissions": [
+      "https://play.textadventures.co.uk/textadventures/*",
+      "https://textadventures.co.uk/games/load/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://play.textadventures.co.uk/textadventures/*"],
+        "js": ["lib/browser-polyfill.min.js", "content-scripts/copyV5SaveToVivaSave.js", "content-scripts/viva-player.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_title": "Import v5 Save"
+    },
+    "background": {
+      "scripts": ["lib/browser-polyfill.min.js", "background.js"]
+    },
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "quest-v5-save-importer@textadventures.co.uk"
+      }
+    },
+    "manifest_version": 3
+}

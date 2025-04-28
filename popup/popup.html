@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 300px; font-family: Arial; padding: 10px; }
+    button { 
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Quest v5 Save Importer</h3>
+  <div id="status">Ready to import</div>
+  <button id="transferSave">Import v5 Save</button>
+  <!-- Add polyfill first -->
+  <script src="../lib/browser-polyfill.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
